@@ -1,10 +1,12 @@
-package com.nadiahassouni.foregroundservice
+package com.nadiahassouni.foregroundservice.ui
 
 import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.nadiahassouni.foregroundservice.R
+import com.nadiahassouni.foregroundservice.service.MusicService
 import com.nadiahassouni.foregroundservice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,10 +26,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun stopMusicService() {
+        binding.ivPlay.setImageResource(R.drawable.ic_play)
         stopService(Intent(this , MusicService::class.java))
     }
 
     private fun startMusicService() {
+        binding.ivPlay.setImageResource(R.drawable.ic_pause)
         startService(Intent(this , MusicService::class.java))
 
     }

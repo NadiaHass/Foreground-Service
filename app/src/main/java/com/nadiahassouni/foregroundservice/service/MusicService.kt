@@ -1,4 +1,4 @@
-package com.nadiahassouni.foregroundservice
+package com.nadiahassouni.foregroundservice.service
 
 import android.app.*
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.media.MediaPlayer
 import android.os.Build
 import android.os.Build.VERSION.SDK_INT
 import android.os.IBinder
+import com.nadiahassouni.foregroundservice.R
+import com.nadiahassouni.foregroundservice.ui.MainActivity
 
 class MusicService : Service() {
 
@@ -54,7 +56,7 @@ class MusicService : Service() {
     }
 
     private fun createNotification() {
-        if (Build.SDK_INT >= Build.VERSION_CODES.O){
+        if (SDK_INT >= Build.VERSION_CODES.O){
             val channel = NotificationChannel("1" , "My channel" ,
             NotificationManager.IMPORTANCE_DEFAULT)
 
