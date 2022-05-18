@@ -65,4 +65,9 @@ class MusicService : Service() {
             manager.createNotificationChannel(channel)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        musicPlayer.stop()
+    }
 }
